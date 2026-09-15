@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Sports</title>
+    <link rel="stylesheet" href="innerhome.css">
+</head>
+
+<body>
+
+    <div class="banner">
+
+        <div class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="cricket.html">Events</a></li>
+                <li><a href="sports.html">Campus</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1>FIND YOUR GAME</h1>
+            <p>Choose a sport . Feel the Pulse</p>
+
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="sportSearch" 
+                    placeholder="Search your sport..."
+                    autocomplete="off"
+                >
+                <button type="button" onclick="searchSport()">Search</button>
+            </div>
+        </div>
+
+        <marquee behavior="scroll" direction="left" scrollamount="10">
+            <div class="marquee-content">
+                <span>
+                    Welcome to PlayPulse! Your ultimate destination for sports enthusiasts.
+                    Explore a wide range of sports, stay updated with the latest events,
+                    and connect with fellow athletes. Get ready to experience the thrill of the game!
+                </span>
+            </div>
+        </marquee>
+
+    </div>
+
+    <section class="trending">
+
+        <div class="trending-header">
+            <div>
+                <span class="section-tag">WHAT'S HOT</span>
+                <h1>Trending <span>Now.</span></h1>
+            </div>
+
+            <p>
+                Catch up on the sports, stories, and moments everyone's talking about.
+            </p>
+        </div>
+
+        <div class="trending-cards">
+
+            <article class="card card-large" onclick="window.location.href='football.html'">
+                <img src="card1.jpg" alt="Football match">
+
+                <div class="card-overlay"></div>
+
+                <div class="card-content">
+                    <span class="card-number">01</span>
+
+                    <div>
+                        <h2>Football</h2>
+                        <p>
+                            Big matches. Bigger moments. Stay close to the action.
+                        </p>
+
+                        <a href="football.html" class="explore-btn" onclick="event.stopPropagation()">
+                            Explore <span>↗</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" onclick="window.location.href='basketball.html'">
+                <img src="card2.jpg" alt="Basketball game">
+
+                <div class="card-overlay"></div>
+
+                <div class="card-content">
+                    <span class="card-number">02</span>
+
+                    <div>
+                        <h2>Basketball</h2>
+                        <p>
+                            Fast breaks, clutch shots, and everything in between.
+                        </p>
+
+                        <a href="basketball.html" class="explore-btn" onclick="event.stopPropagation()">
+                            Explore <span>↗</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" onclick="window.location.href='volleyball.html'">
+                <img src="card3.jpg" alt="Volleyball match">
+
+                <div class="card-overlay"></div>
+
+                <div class="card-content">
+                    <span class="card-number">03</span>
+
+                    <div>
+                        <h2>Volleyball</h2>
+                        <p>
+                            Every rally matters. Every point can change the game.
+                        </p>
+
+                        <a href="volleyball.html" class="explore-btn" onclick="event.stopPropagation()">
+                            Explore <span>↗</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card card-wide" onclick="window.location.href='cricket.html'">
+                <img src="card4.jpg" alt="Cricket match">
+
+                <div class="card-overlay"></div>
+
+                <div class="card-content">
+                    <span class="card-number">04</span>
+
+                    <div>
+                        <h2>Cricket</h2>
+                        <p>
+                            Precision, power, and the race against the clock.
+                        </p>
+
+                        <a href="cricket.html" class="explore-btn" onclick="event.stopPropagation()">
+                            Explore <span>↗</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="more-sports">
+            <a href="more.html">MORE SPORTS <span>→</span></a>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2>PlayPulse</h2>
+                <p>
+                    Your Game. Your Pulse.
+                    <br>
+                    Discover, explore and experience the excitement.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+
+                <a href="home.html">Home</a>
+                <a href="innerhome.html">Events</a>
+                <a href="sports.html">Campus</a>
+                <a href="about.html">About</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Explore</h3>
+
+                <a href="innerhome.html">Games</a>
+                <a href="cricket.html">Events</a>
+                <a href="sports.html">Sports</a>
+                <a href="sports.html">Campus Activities</a>
+            </div>
+
+            <div class="footer-social">
+                <h3>Connect With Us</h3>
+
+                <p>Follow PlayPulse and stay connected.</p>
+
+                <div class="social-icons">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 PlayPulse. All Rights Reserved.</p>
+
+            <div>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        function searchSport() {
+            const sport = document.getElementById("sportSearch").value.trim().toLowerCase();
+
+            const sports = {
+                football: "football.html",
+                basketball: "basketball.html",
+                cricket: "cricket.html",
+                badminton: "badminton.html",
+                volleyball: "volleyball.html"
+            };
+
+            if (sports[sport]) {
+                window.location.href = sports[sport];
+            } else if (sport !== "") {
+                alert("Sport not found!");
+            }
+        }
+
+        document.getElementById("sportSearch").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                searchSport();
+            }
+        });
+    </script>
+
+</body>
+</html>

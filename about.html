@@ -1,0 +1,182 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | PlayPulse</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0b0d0e;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar {
+            padding: 25px 8%;
+            border-bottom: 2px solid black;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar ul {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover,
+        .navbar .active {
+            color: #c8ff00;
+        }
+
+        .about {
+            width: 80%;
+            max-width: 1000px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .about span {
+            color: #c8ff00;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .about h1 {
+            margin: 15px 0 25px;
+            font-size: 70px;
+        }
+
+        .about h1 strong {
+            color: #c8ff00;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: 0 auto 20px;
+            color: #999;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .info {
+            margin-top: 70px;
+            padding: 35px;
+            border: 1px solid #252929;
+            border-radius: 12px;
+            background: #111415;
+        }
+
+        .info h2 {
+            margin-bottom: 15px;
+            color: #c8ff00;
+        }
+
+        .info p {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 600px) {
+
+            .navbar ul {
+                gap: 20px;
+            }
+
+            .navbar a {
+                font-size: 14px;
+            }
+
+            .about {
+                width: 90%;
+                margin: 70px auto;
+            }
+
+            .about h1 {
+                font-size: 45px;
+            }
+
+            .about p {
+                font-size: 14px;
+            }
+
+            .info {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Events</a></li>
+            <li><a href="sports.html">Campus</a></li>
+        </ul>
+    </header>
+
+    <main>
+
+        <section class="about">
+
+            <span>ABOUT PLAYPULSE</span>
+
+            <h1>
+                About <strong>Us.</strong>
+            </h1>
+
+            <p>
+                Welcome to PlayPulse, your ultimate destination for sports.
+                Our website is created for sports lovers who want to explore
+                different games and stay connected with the world of sports.
+            </p>
+
+            <p>
+                From football and basketball to cricket and volleyball,
+                PlayPulse gives you simple information about your favourite
+                sports along with upcoming events and matches.
+            </p>
+
+            <p>
+                Our goal is to make sports information easy to find,
+                exciting to explore and accessible to everyone.
+            </p>
+
+            <div class="info">
+
+                <h2>Our Goal</h2>
+
+                <p>
+                    To bring sports fans, students and athletes together
+                    through a simple and enjoyable sports platform.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

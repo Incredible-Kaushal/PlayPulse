@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayPulse</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <div class="banner">
+
+        <div class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="innerhome.html">Events</a></li>
+                <li><a href="sports.html">Campus</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+
+            <button class="theme-toggle" id="themeToggle" type="button">
+                ☀️
+            </button>
+        </div>
+
+        <div class="content">
+            <h1>PlayPulse</h1>
+            <p>Your Game . Your Pulse</p>
+
+            <div>
+                <button>
+                    <a href="innerhome.html">Explore</a>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="slider.js"></script>
+
+    <script>
+        const themeToggle = document.getElementById("themeToggle");
+
+        themeToggle.addEventListener("click", function () {
+            document.body.classList.toggle("light-mode");
+
+            if (document.body.classList.contains("light-mode")) {
+                themeToggle.textContent = "🌙";
+            } else {
+                themeToggle.textContent = "☀️";
+            }
+        });
+    </script>
+
+</body>
+</html>

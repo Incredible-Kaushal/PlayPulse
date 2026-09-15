@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>House Enrollment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .houses {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .house {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .red { background: red; }
+    .blue { background: blue; }
+    .green { background: green; }
+    .yellow { background: goldenrod; }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #333;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background: #555;
+    }
+    #enrolled {
+      margin-top: 30px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 30px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Sports & House Selection</h1>
+
+  <div class="houses">
+    <div class="house red" onclick="showEnrolled('Red')">Red</div>
+    <div class="house blue" onclick="showEnrolled('Blue')">Blue</div>
+    <div class="house green" onclick="showEnrolled('Green')">Green</div>
+    <div class="house yellow" onclick="showEnrolled('Yellow')">Yellow</div>
+  </div>
+
+  <form id="enrollForm" onsubmit="enrollUser(event)">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="sport">Favorite Sport:</label>
+    <input type="text" id="sport" name="sport" required>
+
+    <label for="house">Choose Your House:</label>
+    <select id="house" name="house" required>
+      <option value="">--Select--</option>
+      <option value="Red">Red</option>
+      <option value="Blue">Blue</option>
+      <option value="Green">Green</option>
+      <option value="Yellow">Yellow</option>
+    </select>
+
+    <label for="image">Upload Your Image:</label>
+    <input type="file" id="image" name="image" accept="image/*">
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="enrolled">
+    <h2>Enrolled Members</h2>
+    <ul id="memberList"></ul>
+  </div>
+
+  <script>
+    const members = {
+      Red: [],
+      Blue: [],
+      Green: [],
+      Yellow: []
+    };
+
+    function enrollUser(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const sport = document.getElementById('sport').value;
+      const house = document.getElementById('house').value;
+
+      if (house) {
+        members[house].push(`${name} (Sport: ${sport})`);
+        alert(`${name} enrolled in ${house} House!`);
+        document.getElementById('enrollForm').reset();
+      }
+    }
+
+    function showEnrolled(house) {
+      const list = document.getElementById('memberList');
+      list.innerHTML = "";
+      if (members[house].length === 0) {
+        list.innerHTML = `<li>No members enrolled in ${house} yet.</li>`;
+      } else {
+        members[house].forEach(member => {
+          const li = document.createElement('li');
+          li.textContent = member;
+          list.appendChild(li);
+        });
+      }
+    }
+  </script>
+</body>
+</html>
